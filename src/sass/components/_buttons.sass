@@ -1,0 +1,113 @@
+.pd-btn
+  font-weight: 500
+  font-size: 1.7rem
+  line-height: 24px
+  text-align: center
+  color: #FFFFFF
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 1.1rem 3rem
+  border-radius: 25px
+  transition: 0.2s
+  cursor: pointer
+  +mq(xxl)
+    font-size: 1.6rem
+  +mq(xl)
+    font-size: 1.5rem
+  &_load
+    .lt-ico 
+      margin-right: 2rem
+      font-size: 2.6rem
+      +mq(sm)
+        font-size: 2.2rem
+    &.load
+      .lt-ico 
+        animation: rotation 2s infinite linear
+
+  &_red
+    background: $pd_main
+    &:hover
+      background: #c72926
+      color: #FFFFFF
+
+  &_black
+    background: #000
+    &:hover
+      color: #bbbbbb
+  &_white
+    display: inline-flex
+    border: 1px solid #000
+    background: #fff
+    color: #000
+    .lt-ico 
+      margin-right: 1.5rem
+    &:hover
+      color: #bbbbbb
+  &_black-b
+    // background: #00000000
+    background: #101010
+    border: 2px solid #fff
+    padding: 1rem 3rem
+    &:hover
+      color: #bbbbbb
+      // border: 2px solid #bbbbbb
+
+  &:focus
+    outline: none
+  &:active,
+  &:visited,
+  &:hover,
+  &:link
+    // color: $text-color
+    text-decoration: none
+  &:hover
+    // color: #FFFFFF
+  
+
+
+
+@keyframes ch-pulse
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(.98)
+  100%
+    transform: scale(1)
+
+@keyframes move
+  0%
+    transform: translateX(-100px) skewX(-15deg) scaleX(1)
+    opacity: 0
+  15%
+    opacity: 0
+  48%
+    opacity: 1
+
+  80%
+    opacity: 0
+  100%
+    transform: translateX(330px) skewX(-15deg) scaleX(1)
+
+@keyframes jittery
+  5%,
+  50%
+    transform: scale(1)
+  10%
+    transform: scale(0.95)
+  15%
+    transform: scale(1.05)
+  20%
+    transform: scale(1.05) rotate(-5deg)
+  25%
+    transform: scale(1.05) rotate(5deg)
+  30%
+    transform: scale(1.05) rotate(-3deg)
+  35%
+    transform: scale(1.05) rotate(2deg)
+  40%
+    transform: scale(1.05) rotate(0)
+
+@keyframes heartbeat
+  50%
+    transform: scale(1.05)

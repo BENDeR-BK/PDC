@@ -1,0 +1,257 @@
+html
+  font-size: 10px
+  // font-family: $main-font
+  min-width: 320px
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  margin: 0
+  padding: 0
+
+p
+  color: $white
+
+  
+  // color: $text-color
+.screen-reader-response
+  // sass-lint:disable no-important
+  display: none !important
+.wpcf7-response-output
+  // sass-lint:disable no-important
+  display: none !important
+span.wpcf7-not-valid-tip
+  font: 1.4rem/1 gm
+  color: #fa0000
+  display: block
+  text-align: center
+  padding-top: .6rem
+  margin-bottom: -1rem
+.slick-slide
+  outline: 0 !important
+  &:focus
+    outline: 0 !important
+  a
+    outline: none !important
+.slick-list
+  outline: none !important
+.text-center
+  text-align: center
+.ajax-loader
+  display: none !important
+
+html
+  &.hidden-scroll
+    overflow: hidden
+    position: fixed
+    // -webkit-overflow-scrolling: touch
+    touch-action: none
+    -ms-touch-action: none
+    height: 100%
+    width: 100%
+body
+  .container
+    @media (min-width: 1200px)
+      max-width: 131rem
+    @media (max-width: 1340px)
+      max-width: calc(100% - 30px)
+    @media (max-width: 1023px)
+      max-width: 100%
+  &.hidden-scroll
+    overflow: hidden
+    position: relative
+    // -webkit-overflow-scrolling: touch
+    touch-action: none
+    -ms-touch-action: none
+    height: 100%
+
+// ::-webkit-scrollbar
+//   width: .5rem
+// ::-webkit-scrollbar-track
+//   background: $white
+// ::-webkit-scrollbar-thumb
+//   background: $grey
+// ::-webkit-scrollbar-thumb:hover
+//   background: lighten($grey, 5%)
+
+a
+  &:hover 
+    text-decoration: none
+.main-bg
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: #0000003a
+  z-index: 1
+  transition: 0.5s
+  visibility: hidden
+  opacity: 0
+  &.show
+    visibility: visible
+    opacity: 1
+
+.breadcrumbs
+  padding: 2.7rem 0
+  font-weight: 500
+  font-size: 14px
+  line-height: 18px
+  span
+    color: #828282
+  a
+    padding-right: 2.8rem
+    position: relative
+    white-space: nowrap
+
+    &::after
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 4px 0 4px 4px
+      border-color: transparent transparent transparent $d_grey
+      display: inline-block
+      position: absolute
+      top: 0.6rem
+      right: 1rem
+    span
+      color: $d_grey
+
+.screen-pag
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: fixed
+  left: 7.5rem
+  top: 0
+  bottom: 0
+  z-index: 2
+  display: none
+  +mq(xxxl)
+    left: 2rem
+  +mq(1024px)
+    left: 1rem
+    display: none
+
+  +mq(lg)
+    display: none
+  &-item
+    width: 0.2rem
+    height: 2.1rem
+    background: #C9C9C9
+    margin: 0.6rem 0
+
+    &.active
+      background: #000
+
+
+
+@media (min-width: 576px)
+  .modal-dialog 
+      max-width: 625px
+
+
+
+.select-list
+
+  &__wrap
+    cursor: pointer
+    border-radius: 0
+    background: #f2f2f2
+    border: 0
+    padding: 4px 40px 4px 15px
+    height: auto
+    font-family: 'Alegreya',serif
+    font-weight: 500
+    font-size: 15px
+    color: #000
+    position: relative
+    &::after
+      content: ''
+      display: block
+      pointer-events: none
+      position: absolute
+      top: 50%
+      -webkit-transform-origin: 66% 66%
+      -ms-transform-origin: 66% 66%
+      transform-origin: 66% 66%
+      -webkit-transform: rotate(45deg)
+      -ms-transform: rotate(45deg)
+      transform: rotate(45deg)
+      -webkit-transition: all 0.15s ease-in-out
+      transition: all 0.15s ease-in-out
+      width: 0
+      height: 0
+      right: 18px
+      margin-top: -5px
+      border-style: solid
+      border-width: 0 0 7px 7px
+      border-color: transparent transparent #000 transparent
+      -webkit-transition: .2s
+      transition: .2s
+    &.active
+      &::after
+        -webkit-transform: rotate(-135deg)
+        -ms-transform: rotate(-135deg)
+        transform: rotate(-135deg)
+      .select-list__list
+        opacity: 1
+        background-color: #f6f6f6
+        visibility: visible
+        pointer-events: auto
+        -webkit-transform: scale(1) translateY(0)
+        -ms-transform: scale(1) translateY(0)
+        transform: scale(1) translateY(0)
+  &__curent
+    line-height: 40px
+    white-space: nowrap
+
+  &__list
+    box-shadow: 0 0 0 1px #4444441c
+    background: #fff
+    list-style: none
+    padding: 0
+    position: absolute
+    top: 100% 
+    left: auto
+    right: 0
+    opacity: 0
+    border-radius: 0
+    // border: 1px solid red
+    -webkit-transform-origin: 50% 0
+    -ms-transform-origin: 50% 0
+    transform-origin: 50% 0
+    -webkit-transform: scale(0.75) translateY(-21px)
+    -ms-transform: scale(0.75) translateY(-21px)
+    transform: scale(0.75) translateY(-21px)
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+    z-index: 9
+    overflow: hidden
+    visibility: hidden
+
+    a 
+      color: #000
+      cursor: pointer
+      font-weight: 400
+      line-height: 40px
+      list-style: none
+      min-height: 40px
+      outline: none
+      padding-left: 18px
+      padding-right: 29px
+      text-align: left
+      -webkit-transition: all 0.2s
+      transition: all 0.2s
+      white-space: nowrap
+      display: inline-block
+      width: 100%
+      &:hover
+        background-color: #f2f2f2
+
+.df-container
+  background: #fff !important
